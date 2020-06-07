@@ -1,8 +1,11 @@
 ---
 # tasks file for ansible-alacritty
-- name: "Template alacritty.yml to $HOME/.config/alacritty/alacritty.yml"
-  template:
-    src: "alacritty.yml.j2"
-    dest: "$HOME/.config/alacritty/alacritty.yml"
-    # mode: '0644'
+- name: Make sure .config/alacritty exists
+  file:
+    path: "{{ansible_env.HOME}}/.config/alacritty"
+    state: directory
 
+- name: Template alacritty.yml
+  template:
+    src: alacritty.yml.j2
+    dest: "{{ansible_env.HOME}}/.config/alacritty/alacritty.yml"
