@@ -1,17 +1,17 @@
-
+# vi: ft=yaml
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: xterm-256color
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
@@ -26,17 +26,17 @@ window:
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
-  #position:
-  #  x: 0
-  #  y: 0
+  # position:
+  #   x: 0
+  #   y: 0
 
   # Window padding (changes require restart)
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-   x: 7
-   y: 7
+   x: 0
+   y: 0
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -110,8 +110,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    # family: Roboto Mono
-    family: hermit
+    family: Roboto Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -122,8 +121,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Roboto Mono
-    family: hermit
+    family: Roboto Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -134,11 +132,10 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Roboto Mono
-    family: hermit
+    family: Roboto Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    style: Regular Italic
 
   # Bold italic font face
   bold_italic:
@@ -146,8 +143,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    # family: Roboto Mono
-    family: hermit
+    family: Roboto Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
@@ -159,14 +155,14 @@ font:
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
    x: 0
-   y: -2
+   y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upwards.
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
+  glyph_offset:
+    x: 0
+    y: 0
 
   # Thin stroke font rendering (macOS only)
   #
@@ -191,8 +187,8 @@ font:
 colors:
   # Default colors
   primary:
-   background: '0x0c121e'
-   foreground: '0x9eabe8'
+   background: '0x{{base00}}'
+   foreground: '0x{{base05}}'
 
     # Bright and dim foreground colors
     #
@@ -208,8 +204,8 @@ colors:
   # the cursor color will be the inverse of the cell color.
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x0c121e'
-    cursor: '0x9eabe8'
+    text: '0x{{base00}}'
+    cursor: '0x{{base05}}'
 
   # Selection colors
   #
@@ -222,33 +218,33 @@ colors:
 
  # Normal colors
   normal:
-    black:   '0x0c121e'
-    red:     '0xff3369'
-    green:   '0xbdeb71'
-    yellow:  '0xffc94a'
-    blue:    '0x6999ff'
-    magenta: '0xcf8aff'
-    cyan:    '0x4ae2ff'
-    white:   '0x9eabe8'
+    black:   '0x{{base00}}'
+    red:     '0x{{base08}}'
+    green:   '0x{{base0B}}'
+    yellow:  '0x{{base0A}}'
+    blue:    '0x{{base0D}}'
+    magenta: '0x{{base0E}}'
+    cyan:    '0x{{base0C}}'
+    white:   '0x{{base05}}'
 
   # Bright colors
   bright:
-    black:   '0x47598d'
-    red:     '0xff3369'
-    green:   '0xbdeb71'
-    yellow:  '0xffc94a'
-    blue:    '0x6999ff'
-    magenta: '0xcf8aff'
-    cyan:    '0x4ae2ff'
-    white:   '0xc8ccd4'
+    black:   '0x{{base03}}'
+    red:     '0x{{base08}}'
+    green:   '0x{{base0B}}'
+    yellow:  '0x{{base0A}}'
+    blue:    '0x{{base0D}}'
+    magenta: '0x{{base0E}}'
+    cyan:    '0x{{base0C}}'
+    white:   '0x{{base07}}'
 
   indexed_colors:
-    - { index: 16, color: '0xd47461' }
-    - { index: 17, color: '0xa16946' }
-    - { index: 18, color: '0x0f1b30' }
-    - { index: 19, color: '0x1b2d53' }
-    - { index: 20, color: '0x0a0d14' }
-    - { index: 21, color: '0xfffee2' }
+    - { index: 16, color: '0x{{base09}}' }
+    - { index: 17, color: '0x{{base0F}}' }
+    - { index: 18, color: '0x{{base01}}' }
+    - { index: 19, color: '0x{{base02}}' }
+    - { index: 20, color: '0x{{base04}}' }
+    - { index: 21, color: '0x{{base06}}' }
   # # Normal colors
   # normal:
   #   black:   '0x000000'
